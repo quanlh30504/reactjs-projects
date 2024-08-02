@@ -108,6 +108,11 @@ function Item({ item, index, onPacked , onDelete}) {
 }
 
 function Stats({items}) {
+
+  if(!items.length){
+    return <em>⛺ Start adding some items to your packing list 🏕️</em>
+  }
+
   const numOfItems = items.length
   const numOfPacked = items.filter((item) => item.packed).length
   const percent = Math.round((numOfPacked / numOfItems) * 100)
